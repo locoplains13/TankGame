@@ -1,11 +1,16 @@
 extends CharacterBody3D
 
-@export var speed = 10
+@export var speed = 0.4
+@export var angular_acceleration = 4
 
 var targetVelocity = Vector3.ZERO
+var last_direction = Vector3()
+
+@onready var character = $Pivot/Character
 
 func _physics_process(delta):
-	var direction = Vector3.ZERO
+	var direction = Vector3()
+	# move the player in that direction and rotate it to where it's moving
 	
 	if Input.is_action_pressed("right"):
 		direction.z -= 1
@@ -16,14 +21,20 @@ func _physics_process(delta):
 		direction.x += 1
 	if Input.is_action_pressed("up"):
 		direction.x -= 1
+	move_and_slide()
 	
-	if direction != Vector3.ZERO:
-		direction = direction.normalized()
-		
-		$Pivot.basis = Basis.looking_at(direction)
+	if direction:
+		last_direction = direction.normalized()
 
 	targetVelocity.x = direction.x * speed
 	targetVelocity.z = direction.z * speed
 	
+	character.rotation.y = lerp_angle(character.rotation.y, atan2(-last_direction.x, -last_direction.z), delta * angular_acceleration)
+	
 	velocity = targetVelocity
-	move_and_slide()
+	
+	
+
+
+func shoot():
+	print("shooting...")

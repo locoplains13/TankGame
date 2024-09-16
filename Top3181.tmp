@@ -1,8 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://dkcwuin66oeca"]
+[gd_scene load_steps=24 format=3 uid="uid://dkcwuin66oeca"]
 
 [ext_resource type="Texture2D" uid="uid://b88acmux6c1yo" path="res://floor_WoodFlooringMerbauBrickBondNatural001_COL_2K.png" id="1_1uwnw"]
 [ext_resource type="Texture2D" uid="uid://bc0kub7ck0ygp" path="res://Assets/Floor/floor_WoodFlooringMerbauBrickBondNatural001_NRM_2K.png" id="2_ckqd8"]
-[ext_resource type="Script" path="res://Rotate gun.gd" id="2_naatp"]
 [ext_resource type="Texture2D" uid="uid://rbf5sh8fs8uc" path="res://Assets/Block/block_wood_table_001_diff_4k.png" id="3_85fnp"]
 [ext_resource type="Script" path="res://Player.gd" id="3_rmul8"]
 [ext_resource type="Texture2D" uid="uid://hy2grotclcjo" path="res://Assets/Block/block_wood_table_001_rough_4k.png" id="4_cqi0d"]
@@ -201,28 +200,25 @@ transform = Transform3D(-4.37114e-08, -0.996195, 0.0871558, 0, 0.0871558, 0.9961
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(0.23, 0, 0, 0, 0.23, 0, 0, 0, 0.23, 2.12542, 0.161158, 4.18581)
 script = ExtResource("3_rmul8")
+speed = 1
 
 [node name="Pivot" type="Node3D" parent="Player"]
 
 [node name="Character" type="Node3D" parent="Player/Pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46497, -0.103917, 0.010704)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.103917, 0)
 
 [node name="Body" type="MeshInstance3D" parent="Player/Pivot/Character"]
-transform = Transform3D(-0.0266667, 0.604332, -0.0176124, 0.00159698, -0.0106272, -0.999844, -0.999643, -0.0161383, -0.00112747, 0.365717, -0.236783, 0.900896)
+transform = Transform3D(-0.0266667, 0.604332, -0.0176158, 0.0015973, -0.0106293, -0.999844, -0.999643, -0.0161383, -0.0011277, 0.405334, -0.23748, 0.89984)
 mesh = SubResource("ArrayMesh_fdmcq")
 skeleton = NodePath("")
 
-[node name="Node3D" type="Node3D" parent="Player/Pivot/Character"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.236977, 0.530442, 0.169022)
-script = ExtResource("2_naatp")
-
-[node name="Head" type="MeshInstance3D" parent="Player/Pivot/Character/Node3D"]
-transform = Transform3D(-0.00146216, -0.015449, 0.11242, -0.0832406, -0.000365738, -0.00197802, 9.17083e-05, -0.578281, -0.00300209, -0.0385447, 0.164726, -0.491936)
+[node name="Head" type="MeshInstance3D" parent="Player/Pivot/Character"]
+transform = Transform3D(-0.00146216, -0.015449, 0.11242, -0.0832406, -0.000365738, -0.00197802, 9.17083e-05, -0.578281, -0.00300209, -0.331806, 0.612213, -0.396845)
 mesh = SubResource("ArrayMesh_38j6l")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.751663, 0.0145784, 0.253563)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.252728, 0.0145784, 0)
 shape = SubResource("BoxShape3D_q0r67")
 
 [node name="Floor" type="StaticBody3D" parent="."]
