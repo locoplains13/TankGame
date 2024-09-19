@@ -33,8 +33,17 @@ func _physics_process(delta):
 	
 	velocity = targetVelocity
 	
-	
+func _process(delta):
+	look_at_cursor()
 
+func look_at_cursor():
+	var target_plane_mouse = Plane(Vector3(0,1,0), position.y)
+	var ray_length = 1000
+	var mouse_position = get_viewport().get_mouse_position()
+	var from = $"../Camera/Camera3D".project_ray_origin(mouse_position)
+	var to = from + $"../Camera/Camera3D".project_ray_normal(mouse_position) * ray_length
+	var cursor_position_on_screen = target_plane_mouse.intersects_ray(from, to)
+	$Pivot/Character/Node3D.look_at(cursor_position_on_screen, Vector3.UP, 0)
 
 func shoot():
 	print("shooting...")

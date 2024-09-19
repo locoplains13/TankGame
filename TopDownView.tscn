@@ -1,8 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://dkcwuin66oeca"]
+[gd_scene load_steps=24 format=3 uid="uid://dkcwuin66oeca"]
 
 [ext_resource type="Texture2D" uid="uid://b88acmux6c1yo" path="res://floor_WoodFlooringMerbauBrickBondNatural001_COL_2K.png" id="1_1uwnw"]
 [ext_resource type="Texture2D" uid="uid://bc0kub7ck0ygp" path="res://Assets/Floor/floor_WoodFlooringMerbauBrickBondNatural001_NRM_2K.png" id="2_ckqd8"]
-[ext_resource type="Script" path="res://Rotate gun.gd" id="2_naatp"]
 [ext_resource type="Texture2D" uid="uid://rbf5sh8fs8uc" path="res://Assets/Block/block_wood_table_001_diff_4k.png" id="3_85fnp"]
 [ext_resource type="Script" path="res://Player.gd" id="3_rmul8"]
 [ext_resource type="Texture2D" uid="uid://hy2grotclcjo" path="res://Assets/Block/block_wood_table_001_rough_4k.png" id="4_cqi0d"]
@@ -214,7 +213,6 @@ skeleton = NodePath("")
 
 [node name="Node3D" type="Node3D" parent="Player/Pivot/Character"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.236977, 0.530442, 0.169022)
-script = ExtResource("2_naatp")
 
 [node name="Head" type="MeshInstance3D" parent="Player/Pivot/Character/Node3D"]
 transform = Transform3D(-0.00146216, -0.015449, 0.11242, -0.0832406, -0.000365738, -0.00197802, 9.17083e-05, -0.578281, -0.00300209, -0.0385447, 0.164726, -0.491936)
