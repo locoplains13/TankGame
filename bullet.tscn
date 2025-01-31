@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://f7tw3uwqcvvf"]
+
+[ext_resource type="Script" path="res://bullet.gd" id="1_ce6oj"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_aybse"]
+radius = 0.25
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_quhqt"]
+albedo_color = Color(0.054902, 0.054902, 0.054902, 1)
+
+[node name="Bullet" type="Node3D"]
+script = ExtResource("1_ce6oj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00333139, 0.00288264, 0)
+mesh = SubResource("SphereMesh_aybse")
+surface_material_override/0 = SubResource("StandardMaterial3D_quhqt")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -1)

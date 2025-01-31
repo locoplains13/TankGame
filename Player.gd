@@ -6,7 +6,14 @@ extends CharacterBody3D
 var targetVelocity = Vector3.ZERO
 var last_direction = Vector3()
 
+var bullet = load("res://bullet.tscn")
+var instance
+
 @onready var character = $Pivot/Character
+@onready var cannon = $Pivot/Character/Node3D/RayCast3D
+@onready var shoot_cooldown = $ShootCooldown
+
+
 
 func _physics_process(delta):
 	var direction = Vector3()
@@ -21,6 +28,8 @@ func _physics_process(delta):
 		direction.x += 1
 	if Input.is_action_pressed("up"):
 		direction.x -= 1
+	if Input.is_action_pressed("shoot"):
+		shoot()
 	move_and_slide()
 	
 	if direction:
@@ -46,4 +55,10 @@ func look_at_cursor():
 	$Pivot/Character/Node3D.look_at(cursor_position_on_screen, Vector3.UP, 0)
 
 func shoot():
-	print("shooting...")
+	if shoot_cooldown.is_stopped():
+		print("shooting...")
+		instance = bullet.instantiate()
+		instance.position = cannon.global_position
+		instance.transform.basis = cannon.global_transform.basis
+		get_parent().add_child(instance)
+		shoot_cooldown.start()
