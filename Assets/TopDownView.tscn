@@ -1,0 +1,133 @@
+[gd_scene load_steps=13 format=4 uid="uid://dkcwuin66oeca"]
+
+[ext_resource type="PackedScene" uid="uid://rhxnaiikrywl" path="res://Assets/Player/player.tscn" id="1_186qu"]
+[ext_resource type="Texture2D" uid="uid://rbf5sh8fs8uc" path="res://Assets/Block/block_wood_table_001_diff_4k.png" id="3_85fnp"]
+[ext_resource type="Texture2D" uid="uid://hy2grotclcjo" path="res://Assets/Block/block_wood_table_001_rough_4k.png" id="4_cqi0d"]
+[ext_resource type="PackedScene" uid="uid://bkhh6l7quckn3" path="res://Assets/Floor/wood_floor.glb" id="5_u1d8u"]
+[ext_resource type="Texture2D" uid="uid://brjybbewpar2l" path="res://Assets/Block/block_wood_table_001_nor_gl_4k.png" id="5_ut57y"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r5cc8"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_if5vh"]
+sky_material = SubResource("ProceduralSkyMaterial_r5cc8")
+
+[sub_resource type="Environment" id="Environment_jy3hf"]
+background_mode = 2
+sky = SubResource("Sky_if5vh")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wicgn"]
+size = Vector3(2, 2.18472, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g6qgf"]
+resource_name = "Material.002"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("3_85fnp")
+metallic_texture = ExtResource("4_cqi0d")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("4_cqi0d")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("5_ut57y")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ij5f2"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2.00001),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AAADAAEAAAACAAMAAgAHAAMAAgAGAAcABgAFAAcABgAEAAUABAABAAUABAAAAAEAAgAEAAYAAgAAAAQABwABAAMABwAFAAEA"),
+"name": "Material.002",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AACAvwAAgL8AAIA/AACAvwAAgD8AAIA/AACAvwAAgL8AAIC/AACAvwAAgD8AAIC/AACAPwAAgL8AAIA/AACAPwAAgD8AAIA/AACAPwAAgL8AAIC/AACAPwAAgD8AAIC/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_i4cly"]
+resource_name = "block_Cube_001"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2.00001),
+"attribute_data": PackedByteArray("AADAPgAAAAAAAAA+AACAPgAAwD4AAIA/AAAgPwAAAAAAAGA/AACAPgAAID8AAIA/AADAPgAAQD8AAAA+AAAAPwAAwD4AAEA/AAAgPwAAQD8AAGA/AAAAPwAAID8AAEA/AADAPgAAgD4AAMA+AACAPgAAwD4AAIA+AAAgPwAAgD4AACA/AACAPgAAID8AAIA+AADAPgAAAD8AAMA+AAAAPwAAwD4AAAA/AAAgPwAAAD8AACA/AAAAPwAAID8AAAA/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AgALAAUAAgAIAAsABgAVAAkABgASABUAFAARABcAFAAOABEADAADAA8ADAAAAAMABwANABMABwABAA0AFgAEAAoAFgAQAAQA"),
+"material": SubResource("StandardMaterial3D_g6qgf"),
+"name": "Material.002",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AACAvwAAgL8AAIA/AACAvwAAgL8AAIA/AACAvwAAgL8AAIA/AACAvwAAgD8AAIA/AACAvwAAgD8AAIA/AACAvwAAgD8AAIA/AACAvwAAgL8AAIC/AACAvwAAgL8AAIC/AACAvwAAgL8AAIC/AACAvwAAgD8AAIC/AACAvwAAgD8AAIC/AACAvwAAgD8AAIC/AACAPwAAgL8AAIA/AACAPwAAgL8AAIA/AACAPwAAgL8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgL8AAIC/AACAPwAAgL8AAIC/AACAPwAAgL8AAIC/AACAPwAAgD8AAIC/AACAPwAAgD8AAIC/AACAPwAAgD8AAIC//3//f/9/////fwAA////vwAA/3//f////3//f/9/////f///AAD/vwAA/3//f/////////9/////fwAA////vwAA/3//f/////////9/////f///AAD/vwAA/3//f////3//f/9/////fwAA////v////3//f////3//f/9/////f///AAD/v////3//f/////////9/////fwAA////v////3//f/////////9/////f///AAD/v////3//f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ij5f2")
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00066328, 0, -0.0230608)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jy3hf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Camera"]
+transform = Transform3D(-4.37114e-08, -0.996195, 0.0871558, 0, 0.0871558, 0.996195, -1, 4.35451e-08, -3.8097e-09, 0.910928, 4.38673, 0)
+
+[node name="Player" parent="." instance=ExtResource("1_186qu")]
+
+[node name="Box" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.546669, 3.34701)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box"]
+shape = SubResource("BoxShape3D_wicgn")
+
+[node name="Cube" type="MeshInstance3D" parent="Box"]
+mesh = SubResource("ArrayMesh_i4cly")
+skeleton = NodePath("")
+
+[node name="wood_floor" parent="Box" instance=ExtResource("5_u1d8u")]
+transform = Transform3D(3.565, 0, 0, 0, 3.565, 0, 0, 0, 3.565, 0.201526, 0.546669, -3.22173)
+
+[node name="Box3" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 11.2, 5.02071, -0.546669, 0.250651)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box3"]
+shape = SubResource("BoxShape3D_wicgn")
+
+[node name="Box4" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 11.2, 0, 1, 0, -1, 0, -4.89568e-07, -0.234363, -0.546669, -6.59089)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box4"]
+shape = SubResource("BoxShape3D_wicgn")
+
+[node name="Box5" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -11.2, 0, 1, 0, 1, 0, -4.89568e-07, -2.11606, -0.54667, 7.0992)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0952616, 0, 0)
+shape = SubResource("BoxShape3D_wicgn")
+
+[node name="Box6" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 11.2, -3.96681, -0.54667, -1.04278)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0698814, 1.90735e-06, -0.0110952)
+shape = SubResource("BoxShape3D_wicgn")
+
+[node name="Box2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.558668, -2.63455)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box2"]
+shape = SubResource("BoxShape3D_wicgn")
+
+[node name="Cube" type="MeshInstance3D" parent="Box2"]
+mesh = SubResource("ArrayMesh_i4cly")
+skeleton = NodePath("")
