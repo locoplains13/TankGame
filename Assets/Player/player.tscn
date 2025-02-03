@@ -79,7 +79,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_coudx")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q0r67"]
-size = Vector3(2, 1, 2.57163)
+size = Vector3(2, 1, 2.3449)
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(0.23, 0, 0, 0, 0.23, 0, 0, 0, 0.23, 2.12542, 0.161158, 4.18581)
@@ -104,11 +104,11 @@ mesh = SubResource("ArrayMesh_38j6l")
 skeleton = NodePath("")
 
 [node name="RayCast3D" type="RayCast3D" parent="Pivot/Character/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 0.999962, -0.00872654, 0, 0.00872654, 0.999962, -0.0691557, 0.162786, -1.06088)
+transform = Transform3D(1, 0, 0, 0, 0.999962, -0.00872654, 0, 0.00872654, 0.999962, -0.0691557, 0.172099, -2.1281)
 target_position = Vector3(0, 0, -2)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.751663, 0.0145784, 0.253563)
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.751663, 0.0145784, 0.36693)
 shape = SubResource("BoxShape3D_q0r67")
 
 [node name="ShootCooldown" type="Timer" parent="."]
