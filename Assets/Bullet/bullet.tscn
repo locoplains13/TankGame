@@ -21,11 +21,11 @@ mesh = SubResource("SphereMesh_aybse")
 surface_material_override/0 = SubResource("StandardMaterial3D_quhqt")
 
 [node name="TrailEffect" type="MeshInstance3D" parent="MeshInstance3D"]
-transparency = 0.82
+transparency = 0.53
 script = ExtResource("2_1npjr")
 _lifespan = 0.25
 _startColor = Color(0.756863, 0, 0.254902, 1)
-_endColor = Color(0.447059, 0.160784, 0.176471, 0)
+_endColor = Color(0.447059, 0.160784, 0.176471, 1)
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(0.87, 0, 0, 0, 0.87, 0, 0, 0, 0.87, 0, 0, 0.216974)
